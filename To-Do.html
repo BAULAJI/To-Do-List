@@ -1,0 +1,103 @@
+<html>
+    <head>
+        <!-- <title><img src="https://cdnl.iconscout.com/lottie/premium/thumb/task-list-4942516-4123762.gif" /></title> -->
+        <title>TodoList</title>
+        <link rel="icon"  href="https://cdnl.iconscout.com/lottie/premium/thumb/task-list-4942516-4123762.gif">
+    </head>
+<style>
+    body{
+        background-color: aqua;
+        background-image: url(https://blog.depositphotos.com/wp-content/uploads/2017/07/Soothing-nature-backgrounds-2.jpg.webp);
+        background-repeat: no-repeat;
+        background-size: cover;
+        color: white;
+    }
+    input{
+        height: 50px;
+        width: 400px;
+        border-radius: 15px;
+        border-top: none;
+        border-left: none;
+        border-right: none; 
+        border-color: black;
+        border-width: 2px;
+        font-size:large;
+    }
+    #adding{
+        width: 50px;
+        background-color:blue;
+        border-radius: 15px;
+        height: 50px;
+        color: white;
+        font-weight: bolder;
+        border: none;
+    }
+    #deleting{
+        width: 80px;
+        background-color:red;
+        border-radius: 15px;
+        height: 50px;
+        color: white;
+        font-weight: bolder;
+        border: 20px;
+        margin :20px;
+        /* margin-left: 60px; */
+    }
+    .listt{
+        text-align: center;
+    }
+    #ul{
+        display: inline-block;
+        text-align: left;
+        font-weight: bold;
+        font-size:x-large;
+         color:black;
+        /*background-color: white; */
+    }
+    fieldset{
+        background: transparent;
+        margin-left: 35%;
+        margin-right: 39%;
+        /* background-image: url(https://i.makeagif.com/media/5-25-2021/GVAQUl.gif); */
+        background-color:white;
+        /* padding-right: 20%; */
+        background-repeat: no-repeat;
+        background-size: cover;
+        border-radius: 20px;
+    }
+</style>
+<body>
+    <br><br><br><br><br><br>
+    <br><br>
+    <br><br>
+<center>
+<input id="input">
+<button id="adding" onclick="add()">Add</button>
+</center>
+<br><br>
+<div class="listt">
+<fieldset>
+<ul id="ul">
+</ul>
+</fieldset>
+</div>
+</body>
+<script>
+    function add()
+    {
+        var inp=document.getElementById("input")
+        var u=document.getElementById("ul")
+        var c=document.createElement("li")
+        var b=document.createElement("br")
+        c.innerHTML=inp.value+" <button id='deleting' onclick='deleted(event)'>Delete</button> "
+        u.append(b)
+        u.append(c)
+        u.append(b)
+    }
+    function deleted(event)
+    {
+        event.target.parentElement.remove()
+        alert("Wohoo! You are Completed the Task!")
+    }
+</script>
+</html>
